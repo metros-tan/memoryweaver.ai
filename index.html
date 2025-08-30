@@ -6,8 +6,32 @@
     <title>MemoryWeaver.ai - AI-Powered Memoirs & Legacies</title>
     <meta name="description" content="Preserve your life's stories with AI. Create emotional memoirs for your family.">
     <style>
-        body { font-family: 'Playfair Display', serif; margin: 0; padding: 0; background: #f9f5f0; color: #333; }
-        header { background: url('https://source.unsplash.com/random/1920x1080/?family,memories') no-repeat center/cover; height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 20px; }
+        body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; background: #f9f5f0; color: #333; }
+        header { 
+            background: url('https://source.unsplash.com/random/1920x1080/?family,memories') no-repeat center/cover; 
+            height: 80vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            color: #fff; /* Keep white text */
+            padding: 20px; 
+            position: relative; /* For overlay */
+        }
+        header::before { /* Add dark overlay for better contrast */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+            z-index: 1;
+        }
+        header > div { /* Ensure content is above overlay */
+            position: relative;
+            z-index: 2;
+        }
         header h1 { font-size: 3em; margin: 0; }
         header p { font-size: 1.5em; }
         section { padding: 40px 20px; max-width: 1200px; margin: auto; }
@@ -21,7 +45,7 @@
         footer { text-align: center; padding: 20px; background: #333; color: white; }
         @media (max-width: 768px) { .feature { width: 100%; } header h1 { font-size: 2em; } }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
