@@ -6,83 +6,185 @@
     <title>MemoryWeaver.ai - AI-Powered Memoirs & Legacies</title>
     <meta name="description" content="Preserve your life's stories with AI. Create emotional memoirs for your family.">
     <style>
-        body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; background: #f9f5f0; color: #333; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: #ffffff; 
+            color: #2d2d2d; 
+            line-height: 1.6;
+        }
         header { 
-            background: url('https://source.unsplash.com/random/1920x1080/?family,memories') no-repeat center/cover; 
-            height: 80vh; 
+            background: linear-gradient(180deg, #6a4c93 0%, #ffaf81 100%); /* Purple to orange gradient */
+            height: 70vh; 
             display: flex; 
+            flex-direction: column; 
             align-items: center; 
             justify-content: center; 
             text-align: center; 
-            color: #fff; /* Keep white text */
-            padding: 20px; 
-            position: relative; /* For overlay */
-        }
-        header::before { /* Add dark overlay for better contrast */
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-            z-index: 1;
-        }
-        header > div { /* Ensure content is above overlay */
+            color: #ffffff; 
+            padding: 0 20px;
             position: relative;
-            z-index: 2;
+            overflow: hidden;
         }
-        header h1 { font-size: 3em; margin: 0; }
-        header p { font-size: 1.5em; }
-        section { padding: 40px 20px; max-width: 1200px; margin: auto; }
-        .narrative { background: #e6d9c8; }
-        .features { display: flex; flex-wrap: wrap; justify-content: space-around; }
-        .feature { width: 30%; margin: 10px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .cta { text-align: center; }
-        form { max-width: 400px; margin: auto; }
-        input { display: block; width: 100%; padding: 10px; margin: 10px 0; }
-        button { background: #d4a373; border: none; padding: 15px 30px; color: white; font-size: 1.2em; cursor: pointer; border-radius: 5px; }
-        footer { text-align: center; padding: 20px; background: #333; color: white; }
-        @media (max-width: 768px) { .feature { width: 100%; } header h1 { font-size: 2em; } }
+        header h1 { 
+            font-size: 4em; 
+            margin: 0 0 0.1em; 
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        header .separator {
+            width: 100px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 10px auto 15px;
+        }
+        header p { 
+            font-size: 1.2em; 
+            margin: 0 0 2em;
+            max-width: 700px;
+            opacity: 0.9;
+        }
+        button { 
+            background: #ffffff; 
+            border: none; 
+            padding: 12px 40px; 
+            color: #6a4c93; /* Matching purple */
+            font-size: 1em; 
+            font-weight: 600;
+            cursor: pointer; 
+            border-radius: 50px; 
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        button:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #ffaf81;
+        }
+        section { 
+            padding: 80px 20px; 
+            max-width: 1200px; 
+            margin: auto; 
+            text-align: center;
+        }
+        .narrative h2 {
+            font-size: 3em;
+            margin: 0 0 0.1em;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #555555;
+            letter-spacing: 1px;
+        }
+        .narrative .separator {
+            width: 80px;
+            height: 1px;
+            background: #cccccc;
+            margin: 10px auto 15px;
+        }
+        .narrative p {
+            font-size: 1.1em;
+            color: #777777;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .features { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 40px; 
+            margin-top: 60px;
+        }
+        .feature { 
+            background: #f8f7f5; 
+            padding: 40px 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+            transition: transform 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-8px);
+        }
+        .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+            color: #6a4c93;
+        }
+        .cta { 
+            background: #ffffff; 
+            padding: 60px;
+            border-top: 1px solid #eeeeee;
+        }
+        form { 
+            max-width: 500px; 
+            margin: 30px auto 0; 
+        }
+        input { 
+            display: block; 
+            width: 100%; 
+            padding: 12px 20px; 
+            margin: 0 0 20px; 
+            border: 1px solid #dddddd; 
+            border-radius: 50px; 
+            font-size: 1em;
+            text-align: center;
+        }
+        footer { 
+            text-align: center; 
+            padding: 40px 20px; 
+            background: #2d2d2d; 
+            color: #ffffff; 
+            font-size: 0.9em;
+            margin-top: 60px;
+        }
+        footer a { 
+            color: #ffaf81; 
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        @media (max-width: 768px) { 
+            header h1 { font-size: 3em; } 
+            .narrative h2 { font-size: 2.5em; }
+            section { padding: 60px 15px; }
+        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div>
-            <h1>Weave Your Life's Stories into Timeless Legacies with AI</h1>
-            <p>MemoryWeaver turns your memories into personalized memoirs that preserve your essence for generations.</p>
-            <a href="#cta"><button>Join the Waitlist</button></a>
-        </div>
+        <h1>Weave Your Legacy</h1>
+        <div class="separator"></div>
+        <p>MemoryWeaver harnesses AI to transform your cherished photos, voices, and stories into timeless, emotional memoirs that connect generations.</p>
+        <button>Join the Waitlist</button>
     </header>
     <section class="narrative">
-        <h2>In a Fast World, Memories Are Your Greatest Legacy</h2>
-        <p>Today, 80% of families regret not capturing elders' stories before they're gone. MemoryWeaver uses AI to compile photos, audio, and text into emotional memoirs—perfect for families, retirees, and legacy-minded individuals.</p>
+        <h2>Preserve What Matters Most</h2>
+        <div class="separator"></div>
+        <p>In today's fast-paced world, 80% of families regret not capturing their elders' stories. MemoryWeaver changes that with intuitive AI tools designed for families, retirees, and legacy builders—effortlessly creating personalized tributes that last forever.</p>
     </section>
     <section class="features">
         <div class="feature">
-            <h3>AI-Powered Memoir Creation</h3>
-            <p>Upload your content, and our AI weaves it into a narrative book, video, or interactive timeline.</p>
+            <h3>Intelligent Weaving</h3>
+            <p>AI seamlessly compiles your uploads into captivating narratives, videos, or interactive timelines.</p>
         </div>
         <div class="feature">
-            <h3>Emotional Customization</h3>
-            <p>Add voiceovers, themes, and family collaborations for a deeply personal touch.</p>
+            <h3>Personal Touch</h3>
+            <p>Customize with voiceovers, themes, and family collaborations for a memoir that's uniquely yours.</p>
         </div>
         <div class="feature">
-            <h3>Secure Legacy Sharing</h3>
-            <p>Private sharing options with encryption for peace of mind.</p>
+            <h3>Safe & Enduring</h3>
+            <p>Secure encryption ensures your legacies are protected and easily shared with loved ones.</p>
         </div>
     </section>
     <section id="cta" class="cta">
-        <h2>Coming Soon—Be the First to Weave</h2>
+        <h2>Start Your Journey Today</h2>
+        <div class="separator"></div>
+        <p>Be the first to experience MemoryWeaver. Sign up for our waitlist and preserve your stories before they're forgotten.</p>
         <form name="waitlist" method="POST" data-netlify="true">
             <input type="email" name="email" placeholder="Enter your email" required>
-            <button type="submit">Join Now</button>
+            <button type="submit">Get Started</button>
         </form>
-        <p>Submissions go to your Netlify dashboard—no extra setup!</p>
     </section>
     <footer>
-        <p>© 2025 MemoryWeaver.ai | <a href="/privacy" style="color:white;">Privacy</a> | <a href="/terms" style="color:white;">Terms</a></p>
+        <p>© 2025 MemoryWeaver.ai | <a href="/privacy">Privacy</a> | <a href="/terms">Terms</a></p>
     </footer>
 </body>
 </html>
