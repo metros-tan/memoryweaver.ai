@@ -3,61 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MemoryWeaver - Capture and Share Your Stories</title>
+    <title>MemoryWeaver.ai - AI-Powered Memoirs & Legacies</title>
+    <meta name="description" content="Preserve your life's stories with AI. Create emotional memoirs for your family.">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="MemoryWeaver.ai - AI-Powered Memoirs & Legacies">
+    <meta property="og:description" content="Preserve your life's stories with AI. Create emotional memoirs for your family.">
+    <meta property="og:image" content="/path/to/share-image.jpg">
+    <meta property="og:url" content="https://memoryweaver.ai">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPN84266FY"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-FPN84266FY');
     </script>
+
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: #ffffff; 
+            color: #2d2d2d; 
+            line-height: 1.6;
+        }
+        header { 
+            background: linear-gradient(180deg, #6a4c93 0%, #ffaf81 100%);
+            min-height: 70vh; 
+            max-height: 100vh;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            color: #ffffff; 
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        header h1 { 
+            font-size: 4em; 
+            margin: 0 0 0.1em; 
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            word-break: break-word;
+        }
+        .separator { 
+            height: 1px; 
+            margin: 10px auto 15px;
+        }
+        header .separator { 
+            width: 100px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .narrative .separator { 
+            width: 80px;
+            background: #cccccc;
+        }
+        header p { 
+            font-size: 1.2em; 
+            margin: 0 0 2em;
+            max-width: 700px;
+            opacity: 0.9;
+        }
+        button { 
+            background: #ffffff; 
+            border: none; 
+            padding: 12px 40px; 
+            color: #6a4c93;
+            font-size: 1em; 
+            font-weight: 600;
+            cursor: pointer; 
+            border-radius: 50px; 
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        button:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #ffaf81;
+        }
+        section { 
+            padding: 80px 20px; 
+            max-width: 1200px; 
+            margin: auto; 
+            text-align: center;
+        }
+        .narrative h2 {
+            font-size: 3em;
+            margin: 0 0 0.1em;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #555555;
+            letter-spacing: 1px;
+        }
+        .narrative p {
+            font-size: 1.1em;
+            color: #777777;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .features { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 40px; 
+            margin-top: 60px;
+        }
+        .feature { 
+            background: #f8f7f5; 
+            padding: 40px 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-8px);
+        }
+        .feature .icon {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            color: #6a4c93;
+        }
+        .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+            color: #6a4c93;
+        }
+        .cta { 
+            background: #ffffff; 
+            padding: 60px;
+            border-top: 1px solid #eeeeee;
+        }
+        form { 
+            max-width: 500px; 
+            margin: 30px auto 0; 
+        }
+        input { 
+            display: block; 
+            width: 100%; 
+            padding: 12px 20px; 
+            margin: 0 0 20px; 
+            border: 1px solid #dddddd; 
+            border-radius: 50px; 
+            font-size: 1em;
+            text-align: center;
+        }
+        footer { 
+            text-align: center; 
+            padding: 40px 20px; 
+            background: #2d2d2d; 
+            color: #ffffff; 
+            font-size: 0.9em;
+            margin-top: 60px;
+        }
+        footer a { 
+            color: #ffaf81; 
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        @media (max-width: 768px) { 
+            header h1 { font-size: 3em; } 
+            .narrative h2 { font-size: 2.5em; }
+            section { padding: 60px 15px; }
+        }
+        /* Visually hidden for accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Capture Your Stories</h1>
+        <div class="separator"></div>
         <p>MemoryWeaver uses AI to help you record audio stories, add photos, and create simple animated narratives to share with family.</p>
-        <a href="#cta" id="cta">Join Waitlist</a>
+        <a href="#cta"><button>Join the Waitlist</button></a>
     </header>
 
-    <main>
-        <section>
-            <h2>Keep Your Memories Alive</h2>
-            <p>Many people wish they had captured more family stories. MemoryWeaver makes it easy with simple tools for recording, organizing, and sharing—perfect for anyone wanting to preserve personal tales.</p>
-        </section>
+    <section class="narrative">
+        <h2>Keep Your Memories Alive</h2>
+        <div class="separator"></div>
+        <p>Many people wish they had captured more family stories. MemoryWeaver makes it easy with simple tools for recording, organizing, and sharing—perfect for anyone wanting to preserve personal tales.</p>
+    </section>
 
-        <section>
+    <section class="features">
+        <div class="feature">
+            <div class="icon" role="img" aria-label="Microphone">🎤</div>
             <h3>Audio Recording</h3>
             <p>Record or upload voice memos—AI transcribes them into basic text narratives.</p>
-        </section>
-
-        <section>
+        </div>
+        <div class="feature">
+            <div class="icon" role="img" aria-label="Photo">🖼️</div>
             <h3>Add Photos</h3>
             <p>Upload photos to blend with your audio and text for customizable timelines.</p>
-        </section>
-
-        <section>
+        </div>
+        <div class="feature">
+            <div class="icon" role="img" aria-label="Lock">🔒</div>
             <h3>Secure Sharing</h3>
             <p>Keep your stories private with encryption; share links when you're ready.</p>
-        </section>
-
-        <section>
+        </div>
+        <div class="feature">
+            <div class="icon" role="img" aria-label="Robot">🤖</div>
             <h3>Simple Animations</h3>
             <p>AI can add basic animations or summaries to your stories for a more engaging view.</p>
-        </section>
+        </div>
+    </section>
 
-        <section id="waitlist-form">
-            <h2>Start Today</h2>
-            <p>Sign up for our waitlist to try MemoryWeaver and capture your stories.</p>
-            <form name="waitlist" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-                <input type="hidden" name="form-name" value="waitlist" />
-                <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-                <button type="submit">Join Waitlist</button>
-            </form>
-        </section>
-    </main>
+    <section id="cta" class="cta">
+        <h2>Start Today</h2>
+        <div class="separator"></div>
+        <p>Sign up for our waitlist to try MemoryWeaver and capture your stories.</p>
+        <form name="waitlist" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="waitlist">
+            <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+            <label for="email" class="sr-only">Email address</label>
+            <input id="email" type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Join Waitlist</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 MemoryWeaver.ai | <a href="/privacy">Privacy</a> | <a href="/terms">Terms</a></p>
+    </footer>
 </body>
 </html>
