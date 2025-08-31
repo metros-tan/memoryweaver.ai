@@ -155,6 +155,11 @@
             font-size: 1em;
             text-align: center;
         }
+        label.checkbox { 
+            display: block; 
+            margin-bottom: 20px; 
+            text-align: left; 
+        }
         footer { 
             text-align: center; 
             padding: 40px 20px; 
@@ -184,6 +189,13 @@
             clip: rect(0,0,0,0);
             white-space: nowrap;
             border: 0;
+        }
+        /* Confirmation message style */
+        #confirmation {
+            display: none;
+            color: #6a4c93;
+            font-weight: 600;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -228,17 +240,49 @@
         <h2>Start Today</h2>
         <div class="separator"></div>
         <p>Sign up for our waitlist to try MemoryWeaver and capture your stories.</p>
-        <form name="waitlist" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <form id="waitlist-form" name="waitlist" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true">
             <input type="hidden" name="form-name" value="waitlist">
             <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
             <label for="email" class="sr-only">Email address</label>
             <input id="email" type="email" name="email" placeholder="Enter your email" required>
+            <label class="checkbox"><input type="checkbox" name="consent" required> I agree to the <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Service</a></label>
             <button type="submit">Join Waitlist</button>
         </form>
+        <div id="confirmation">Thanks for joining the waitlist! We'll be in touch soon.</div>
     </section>
 
     <footer>
         <p>© 2025 MemoryWeaver.ai | <a href="/privacy">Privacy</a> | <a href="/terms">Terms</a></p>
     </footer>
+
+    <script>
+        const form = document.getElementById('waitlist-form');
+        const confirmation = document.getElementById('confirmation');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default reload
+            const formData = new FormData(form);
+
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                // Track in GA
+                gtag('event', 'join_waitlist_submit', {
+                    'event_category': 'engagement',
+                    'event_label': 'Waitlist Form Submission'
+                });
+                // Show confirmation
+                form.style.display = 'none';
+                confirmation.style.display = 'block';
+            })
+            .catch(error => {
+                console.error('Submission error:', error);
+                alert('There was an issue submitting the form. Please try again.');
+            });
+        });
+    </script>
 </body>
 </html>
