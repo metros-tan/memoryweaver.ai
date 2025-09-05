@@ -6,27 +6,23 @@
     <title>MemoryWeaver.ai - AI-Powered Memoirs & Legacies</title>
     <meta name="description" content="Preserve your life's stories with AI. Create emotional memoirs for your family.">
     <meta name="robots" content="index, follow">
-    <!-- Open Graph / Social -->
-    <meta property="og:title" content="MemoryWeaver.ai - AI-Powered Memoirs & Legacies">
-    <meta property="og:description" content="Preserve your life's stories with AI. Create emotional memoirs for your family.">
-    <meta property="og:image" content="/path/to/share-image.jpg">
-    <meta property="og:url" content="https://memoryweaver.ai">
-    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- GA4 START -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FPN84266FY');
+    </script>
+    <!-- GA4 END -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPN84266FY"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-FPN84266FY');
-    </script>
-
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body { 
             font-family: 'Inter', sans-serif; 
             margin: 0; 
@@ -155,11 +151,6 @@
             font-size: 1em;
             text-align: center;
         }
-        label.checkbox { 
-            display: block; 
-            margin-bottom: 20px; 
-            text-align: left; 
-        }
         footer { 
             text-align: center; 
             padding: 40px 20px; 
@@ -178,7 +169,6 @@
             .narrative h2 { font-size: 2.5em; }
             section { padding: 60px 15px; }
         }
-        /* Visually hidden for accessibility */
         .sr-only {
             position: absolute;
             width: 1px;
@@ -190,99 +180,99 @@
             white-space: nowrap;
             border: 0;
         }
-        /* Confirmation message style */
-        #confirmation {
-            display: none;
-            color: #6a4c93;
-            font-weight: 600;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Capture Your Stories</h1>
+        <h1>Weave Your Legacy</h1>
         <div class="separator"></div>
-        <p>MemoryWeaver uses AI to help you record audio stories, add photos, and create simple animated narratives to share with family.</p>
-        <a href="#cta"><button>Join the Waitlist</button></a>
+        <p>MemoryWeaver harnesses AI to transform your cherished photos, voices, and stories into timeless, emotional memoirs that connect generations.</p>
+        <a href="#cta">
+            <button id="btn-waitlist-hero">Join the Waitlist</button>
+        </a>
     </header>
 
     <section class="narrative">
-        <h2>Keep Your Memories Alive</h2>
+        <h2>Preserve What Matters Most</h2>
         <div class="separator"></div>
-        <p>Many people wish they had captured more family stories. MemoryWeaver makes it easy with simple tools for recording, organizing, and sharing—perfect for anyone wanting to preserve personal tales.</p>
+        <p>In today's fast-paced world, 80% of families regret not capturing their elders' stories. MemoryWeaver changes that with intuitive AI tools designed for families, retirees, and legacy builders—effortlessly creating personalized tributes that last forever.</p>
     </section>
 
     <section class="features">
         <div class="feature">
             <div class="icon" role="img" aria-label="Microphone">🎤</div>
-            <h3>Audio Recording</h3>
-            <p>Record or upload voice memos—AI transcribes them into basic text narratives.</p>
+            <h3>Aural Storytelling Capture</h3>
+            <p>Record or upload voice memos and family tales—AI transcribes and weaves them into narrative memoirs without training on your data.</p>
         </div>
         <div class="feature">
             <div class="icon" role="img" aria-label="Photo">🖼️</div>
-            <h3>Add Photos</h3>
-            <p>Upload photos to blend with your audio and text for customizable timelines.</p>
+            <h3>Media Integration</h3>
+            <p>Blend photos, audio, and text into customizable timelines or books, with automatic PII redaction for privacy.</p>
         </div>
         <div class="feature">
             <div class="icon" role="img" aria-label="Lock">🔒</div>
             <h3>Secure Sharing</h3>
-            <p>Keep your stories private with encryption; share links when you're ready.</p>
+            <p>End-to-end encryption ensures your stories stay private; share links with family only when you're ready.</p>
         </div>
         <div class="feature">
             <div class="icon" role="img" aria-label="Robot">🤖</div>
-            <h3>Simple Animations</h3>
-            <p>AI can add basic animations or summaries to your stories for a more engaging view.</p>
+            <h3>AI-Powered Editing</h3>
+            <p>Generate emotional enhancements like voiceovers or summaries, all processed locally where possible for data control.</p>
         </div>
     </section>
 
     <section id="cta" class="cta">
-        <h2>Start Today</h2>
+        <h2>Start Your Journey Today</h2>
         <div class="separator"></div>
-        <p>Sign up for our waitlist to try MemoryWeaver and capture your stories.</p>
-        <form id="waitlist-form" name="waitlist" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+        <p>Be the first to experience MemoryWeaver. Sign up for our waitlist and preserve your stories before they're forgotten.</p>
+        <form id="waitlist-form" name="waitlist" method="POST" data-netlify="true">
             <input type="hidden" name="form-name" value="waitlist">
-            <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
             <label for="email" class="sr-only">Email address</label>
             <input id="email" type="email" name="email" placeholder="Enter your email" required>
-            <label class="checkbox"><input type="checkbox" name="consent" required> I agree to the <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Service</a></label>
-            <button type="submit">Join Waitlist</button>
+            <button id="btn-waitlist-submit" type="submit">Get Started</button>
         </form>
-        <div id="confirmation">Thanks for joining the waitlist! We'll be in touch soon.</div>
     </section>
 
     <footer>
         <p>© 2025 MemoryWeaver.ai | <a href="/privacy">Privacy</a> | <a href="/terms">Terms</a></p>
     </footer>
 
+    <!-- GA4 EVENTS START -->
     <script>
-        const form = document.getElementById('waitlist-form');
-        const confirmation = document.getElementById('confirmation');
+    (function() {
+      function safeGtag(){ if (typeof gtag === 'function') gtag.apply(null, arguments); }
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default reload
-            const formData = new FormData(form);
-
-            fetch('/', {
-                method: 'POST',
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString()
-            })
-            .then(() => {
-                // Track in GA
-                gtag('event', 'join_waitlist_submit', {
-                    'event_category': 'engagement',
-                    'event_label': 'Waitlist Form Submission'
-                });
-                // Show confirmation
-                form.style.display = 'none';
-                confirmation.style.display = 'block';
-            })
-            .catch(error => {
-                console.error('Submission error:', error);
-                alert('There was an issue submitting the form. Please try again.');
-            });
+      var heroBtn = document.getElementById('btn-waitlist-hero');
+      if (heroBtn) {
+        heroBtn.addEventListener('click', function() {
+          safeGtag('event', 'join_waitlist_click', {
+            event_category: 'engagement',
+            event_label: 'Hero Join Waitlist'
+          });
         });
+      }
+
+      var form = document.getElementById('waitlist-form');
+      if (form) {
+        form.addEventListener('submit', function() {
+          safeGtag('event', 'waitlist_form_submit', {
+            event_category: 'engagement',
+            event_label: 'Waitlist Form'
+          });
+        });
+      }
+
+      var submitBtn = document.getElementById('btn-waitlist-submit');
+      if (submitBtn) {
+        submitBtn.addEventListener('click', function() {
+          safeGtag('event', 'waitlist_submit_click', {
+            event_category: 'engagement',
+            event_label: 'Waitlist Submit Button'
+          });
+        });
+      }
+    })();
     </script>
+    <!-- GA4 EVENTS END -->
 </body>
 </html>

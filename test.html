@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemoryWeaver.ai - AI-Powered Memoirs & Legacies</title>
+    <meta name="description" content="Preserve your life's stories with AI. Create emotional memoirs for your family.">
+    <meta name="robots" content="index, follow">
+
+    <!-- GA4 tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+
+      // Track waitlist button click
+      function trackWaitlistClick() {
+        gtag('event', 'join_waitlist_click', {
+          event_category: 'engagement',
+          event_label: 'Join Waitlist'
+        });
+      }
+
+      // Track form submission
+      function trackFormSubmit() {
+        gtag('event', 'waitlist_form_submit', {
+          event_category: 'engagement',
+          event_label: 'Waitlist Form'
+        });
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      /* --- your CSS unchanged --- */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Weave Your Legacy</h1>
+        <div class="separator"></div>
+        <p>MemoryWeaver harnesses AI to transform your cherished photos, voices, and stories into timeless, emotional memoirs that connect generations.</p>
+        <a href="#cta">
+            <button onclick="trackWaitlistClick()">Join the Waitlist</button>
+        </a>
+    </header>
+
+    <section class="narrative">
+        <h2>Preserve What Matters Most</h2>
+        <div class="separator"></div>
+        <p>In today's fast-paced world, 80% of families regret not capturing their elders' stories. MemoryWeaver changes that with intuitive AI tools designed for families, retirees, and legacy builders—effortlessly creating personalized tributes that last forever.</p>
+    </section>
+
+    <section class="features">
+        <!-- unchanged features section -->
+    </section>
+
+    <section id="cta" class="cta">
+        <h2>Start Your Journey Today</h2>
+        <div class="separator"></div>
+        <p>Be the first to experience MemoryWeaver. Sign up for our waitlist and preserve your stories before they're forgotten.</p>
+        <form name="waitlist" method="POST" data-netlify="true" onsubmit="trackFormSubmit()">
+            <input type="hidden" name="form-name" value="waitlist">
+            <label for="email" class="sr-only">Email address</label>
+            <input id="email" type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Get Started</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 MemoryWeaver.ai | <a href="/privacy">Privacy</a> | <a href="/terms">Terms</a></p>
+    </footer>
+</body>
+</html>
